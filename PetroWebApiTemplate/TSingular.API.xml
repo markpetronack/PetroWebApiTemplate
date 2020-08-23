@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TSingular.API</name>
+    </assembly>
+    <members>
+        <member name="T:PetroWebApiTemplate.Controllers.AccuracyType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PetroWebApiTemplate.Controllers.AccuracyType.Inaccurate">
+            <summary>
+            Inaccuate forecast
+            </summary>
+        </member>
+        <member name="F:PetroWebApiTemplate.Controllers.AccuracyType.Accurate">
+            <summary>
+            Accuate forecast
+            </summary>
+        </member>
+        <member name="F:PetroWebApiTemplate.Controllers.AccuracyType.HalfAccurate">
+            <summary>
+            50% accuate forecast
+            </summary>
+        </member>
+        <member name="T:PetroWebApiTemplate.Controllers.WeatherForecastController">
+            <summary>
+            A default weather forecast controller
+            </summary>
+        </member>
+        <member name="M:PetroWebApiTemplate.Controllers.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{PetroWebApiTemplate.Controllers.WeatherForecastController})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:PetroWebApiTemplate.Controllers.WeatherForecastController.Get">
+            <summary>
+            Get random weather forecasts
+            </summary>
+            <returns>A collection of weather forecasts</returns>
+        </member>
+        <member name="T:PetroWebApiTemplate.WeatherForecast">
+            <summary>
+            The Weather Forecast
+            </summary>
+        </member>
+        <member name="P:PetroWebApiTemplate.WeatherForecast.Date">
+            <summary>
+            Date
+            </summary>
+        </member>
+        <member name="P:PetroWebApiTemplate.WeatherForecast.TemperatureC">
+            <summary>
+            Temp in celsius
+            </summary>
+        </member>
+        <member name="P:PetroWebApiTemplate.WeatherForecast.Accuracy">
+            <summary>
+            How accurate is the weather forecast
+            </summary>
+        </member>
+        <member name="P:PetroWebApiTemplate.WeatherForecast.TemperatureF">
+            <summary>
+            Temp in fahrenheit
+            </summary>
+        </member>
+        <member name="P:PetroWebApiTemplate.WeatherForecast.Summary">
+            <summary>
+            A summary of the weather
+            </summary>
+        </member>
+    </members>
+</doc>

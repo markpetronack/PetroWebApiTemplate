@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,6 +28,18 @@ namespace PetroWebApiTemplate
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            // DescribeAllEnumsAsStrings is obsolete in SwaggerGenOptions.
+            // Use JsonStringEnumConverter to get that functionality:
+            services.AddControllersWithViews()
+                .AddJsonOptions(options => 
+                    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+
+            services.AddSwaggerGen(options =>
+            {
+                // Note: Make sure to turn on the XML documentation file in the Build project settings (use the defaulted xml filename)
+                options.IncludeXmlComments(System.IO.Path.Combine(AppContext.BaseDirectory, $"TSingular.API.xml"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,6 +51,12 @@ namespace PetroWebApiTemplate
             }
 
             app.UseHttpsRedirection();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "TSingular V1");
+            });
 
             app.UseSerilogRequestLogging();
 
